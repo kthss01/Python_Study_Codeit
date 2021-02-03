@@ -78,3 +78,31 @@ print(today.microsecond)  # 마이크로초
 
 # datetime 포맷팅
 print(today.strftime("%A, %B %dth %Y"))  #%A, %B, %d, %Y 포캣 코드
+
+# 파일 쓰기
+import random
+f = open('test.txt', 'w', encoding="utf-8")
+
+for i in range(1, 11):
+    data = "{}일차 : {}원\n".format(i, random.randint(1000 * i, 10000 * i))
+    f.write(data)
+
+f.close()  # with문으로 쓰면 close 할 필요가 없음
+
+with open('test.txt', 'r', encoding='utf-8') as f:
+    # print(f.read())
+
+    # lines = f.readlines()
+    # for line in lines:
+    #     print(line.strip('\n'))
+
+    line = None
+    while line != '':
+        line = f.readline()
+        print(line.strip('\n'))  # 파일에서 읽어온 문자열에서 \n 삭제하여 출력
+
+print(" \ta  b\n\n".strip())
+
+my_string = "1. 2. 3. 4. 5. 6"
+print(my_string.split("."))  # 이렇게만 하면 띄어쓰기만 남음
+print(my_string.split(". "))  # strip활용하거나 '. ' 이걸로 split
