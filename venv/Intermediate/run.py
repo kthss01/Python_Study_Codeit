@@ -18,7 +18,18 @@
 # print(square(3))
 # print(circle(2))
 
+# print(dir(area))
+# print(dir())
+# import area
+
+
+# from area import circle, square as sq
 import area
 
-print(dir(area))
+def square(length):
+    return 4 * length
+
 print(dir())
+# print(sq(3))
+print(area.square())
+print(square(3))
