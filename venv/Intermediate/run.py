@@ -1,8 +1,10 @@
-# import area
-#
-# print(area.circle(2))
-# print(area.square(3))
-# print(area.PI)
+print('run 모듈 이름: {}'.format(__name__))
+
+import area
+
+print(area.circle(2))
+print(area.square(3))
+print(area.PI)
 
 # from area import circle, square
 # print(circle(2))
@@ -24,12 +26,20 @@
 
 
 # from area import circle, square as sq
-import area
+# import area
+#
+# def square(length):
+#     return 4 * length
+#
+# print(dir())
+# # print(sq(3))
+# print(area.square(3))
+# print(square(3))
+#
+# import sys
+#
+# print(sys.path)
+#
+# sys.path.append('C:\\Users\\codeit\\Desktop')  # Windows
 
-def square(length):
-    return 4 * length
-
-print(dir())
-# print(sq(3))
-print(area.square())
-print(square(3))
+print('run 파일 실행됨')
