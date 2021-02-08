@@ -36,10 +36,10 @@ invert_bit(bit) 함수
 
 # cil 모듈을 임포트해 주세요
 ### 코드를 작성해 주세요 ###
-import cil
+import cil_old
 # cil 모듈의 display 함수를 직접 임포트해 주세요
 ### 코드를 작성해 주세요 ###
-from cil import display
+from cil_old import display
 
 img1 = cil.read_image('img1.txt')
 img2 = cil.read_image('img2.txt')

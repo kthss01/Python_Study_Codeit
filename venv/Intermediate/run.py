@@ -1,10 +1,10 @@
 print('run 모듈 이름: {}'.format(__name__))
-
-import area
-
-print(area.circle(2))
-print(area.square(3))
-print(area.PI)
+#
+# import area
+#
+# print(area.circle(2))
+# print(area.square(3))
+# print(area.PI)
 
 # from area import circle, square
 # print(circle(2))
@@ -43,3 +43,21 @@ print(area.PI)
 # sys.path.append('C:\\Users\\codeit\\Desktop')  # Windows
 
 print('run 파일 실행됨')
+
+# # import shapes.volume
+# import shapes.volume as vol
+#
+# # print(shapes.volume.cube(3))
+# print(vol.cube(3))
+#
+# from shapes.area import square
+#
+# print(square(3))
+#
+# from shapes import volume
+#
+# import shapes.volume  # 위 코드는 이 코드와 같음
+
+import shapes
+
+print(shapes.area.circle(2))  # __init__ 을 써줘야 함 그냥하면 안됨
