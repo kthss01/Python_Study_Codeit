@@ -58,6 +58,28 @@ print('run 파일 실행됨')
 #
 # import shapes.volume  # 위 코드는 이 코드와 같음
 
-import shapes
+# import shapes
 
-print(shapes.area.circle(2))  # __init__ 을 써줘야 함 그냥하면 안됨
+# print(shapes.area.circle(2))  # __init__ 을 써줘야 함 그냥하면 안됨
+
+# import shapes.volume
+
+# import shapes
+#
+# # print(shapes.area.square(2))
+# # print(shapes.volume.cube(2))
+#
+# print(shapes.circle(2))
+# print(shapes.square(2))
+#
+# shapes.PI
+
+# from shapes import *
+#
+# print(dir())
+
+# from mymath.stats.average import data_mean
+# from mymath.stats import average
+# import mymath.stats.average  # 위와 같음
+# from mymath import stats
+# import mymath.stats  # 위와 같음

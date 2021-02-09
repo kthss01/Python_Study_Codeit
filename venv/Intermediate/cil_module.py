@@ -35,7 +35,6 @@ def invert(img):
     # img 이미지 크기
     height, width = len(img), len(img[0])
 
-    ### 코드를 작성해 주세요 ###
     new_img = empty_image(height, width)
 
     for i in range(height):

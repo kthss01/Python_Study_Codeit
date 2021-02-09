@@ -1,8 +1,4 @@
-from shapes import PI
-
-print('area 모듈 이름: {}'.format(__name__))
-
-# PI = 3.14
+PI = 3.14
 
 
 def circle(radius):
