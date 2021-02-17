@@ -6,6 +6,7 @@
     </content>
     <content url="file://$MODULE_DIR$/venv/Basic" />
     <content url="file://$MODULE_DIR$/venv/Intermediate" />
+    <content url="file://$MODULE_DIR$/venv/web_automation" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
