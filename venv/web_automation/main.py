@@ -8,6 +8,7 @@ TV 시청률 데이터 가져오기
 '''
 
 import requests
+from bs4 import BeautifulSoup
 
 # response = requests.get("https://google.com")
 # print(response)  # 성공하면 200 실패하면 500
@@ -41,16 +42,55 @@ TV 시청률 데이터 가져오기 2
 '''
 
 # https://workey.codeit.kr/ratings/index?year=2010&month=1&weekIndex=0
-rating_pages = []
+# rating_pages = []
+#
+# for year in range(2010, 2019):
+#     for month in range(1, 13):
+#         for week in range(0, 5):
+#             url = f"https://workey.codeit.kr/ratings/index?year={year}&month={month}&weekIndex={week}"
+#             response = requests.get(url)
+#             rating_page = response.text
+#             rating_pages.append(rating_page)
+#
+# # 출력 코드
+# print(len(rating_pages)) # 가져온 총 페이지 수
+# print(rating_pages[0]) # 첫 번째 페이지의 HTML 코드
 
-for year in range(2010, 2019):
-    for month in range(1, 13):
-        for week in range(0, 5):
-            url = f"https://workey.codeit.kr/ratings/index?year={year}&month={month}&weekIndex={week}"
-            response = requests.get(url)
-            rating_page = response.text
-            rating_pages.append(rating_page)
+response = requests.get('https://workey.codeit.kr/ratings/index')
+rating_page = response.text
+#
+# # print(rating_page)
+#
+soup = BeautifulSoup(rating_page, 'html.parser')
+#
+# # print(soup.prettify())
+# # print(soup.select('title'))
+# # print(soup.select('table'))
+# # print(soup.select('td.program'))
+#
+# program_title_tags = soup.select('td.program')
+#
+# # program_titles = []
+# #
+# # for tag in program_title_tags:
+# #     # print(tag.get_text())
+# #     program_titles.append(tag.get_text())
+# #
+# # print(program_titles)
+#
+# print(soup.select_one('td.program'))
 
-# 출력 코드
-print(len(rating_pages)) # 가져온 총 페이지 수
-print(rating_pages[0]) # 첫 번째 페이지의 HTML 코드
+# print(soup.select('td')[:4])
+# td_tags = soup.select('td')[:4]
+#
+# for tag in td_tags:
+#     print(tag.get_text())
+
+# print(soup.select('tr')[1])
+tr_tag = soup.select('tr')[1]
+# td_tags = tr_tag.select('td')
+td_tags = tr_tag.select('*')
+print(td_tags)
+
+for tag in td_tags:
+    print(tag.get_text())
