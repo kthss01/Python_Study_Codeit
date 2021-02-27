@@ -56,12 +56,31 @@ TV 시청률 데이터 가져오기 2
 # print(len(rating_pages)) # 가져온 총 페이지 수
 # print(rating_pages[0]) # 첫 번째 페이지의 HTML 코드
 
-response = requests.get('https://workey.codeit.kr/ratings/index')
-rating_page = response.text
+# response = requests.get("https://workey.codeit.kr/music")
+# music_page = response.text
 #
-# # print(rating_page)
+# soup = BeautifulSoup(music_page, 'html.parser')
 #
-soup = BeautifulSoup(rating_page, 'html.parser')
+# # print(soup.select('ul.popular__order li'))
+#
+# popular_artists = []
+#
+# for tag in soup.select('ul.popular__order li'):
+#     # print(tag.get_text().strip())
+#     # popular_artists.append(tag.get_text().strip())
+#
+#     # print(list(tag.strings))
+#     # print(list(tag.stripped_strings)[1])
+#     popular_artists.append(list(tag.stripped_strings)[1])
+#
+# print(popular_artists)
+
+# response = requests.get('https://workey.codeit.kr/ratings/index')
+# rating_page = response.text
+# #
+# # # print(rating_page)
+# #
+# soup = BeautifulSoup(rating_page, 'html.parser')
 #
 # # print(soup.prettify())
 # # print(soup.select('title'))
@@ -86,11 +105,19 @@ soup = BeautifulSoup(rating_page, 'html.parser')
 # for tag in td_tags:
 #     print(tag.get_text())
 
-# print(soup.select('tr')[1])
-tr_tag = soup.select('tr')[1]
-# td_tags = tr_tag.select('td')
-td_tags = tr_tag.select('*')
-print(td_tags)
+# # print(soup.select('tr')[1])
+# tr_tag = soup.select('tr')[1]
+# # td_tags = tr_tag.select('td')
+# td_tags = tr_tag.select('*')
+# print(td_tags)
+#
+# for tag in td_tags:
+#     print(tag.get_text())
 
-for tag in td_tags:
-    print(tag.get_text())
+response = requests.get('https://workey.codeit.kr/ratings/index')
+rating_page = response.text
+
+soup = BeautifulSoup(rating_page, 'html.parser')
+
+# print(soup.select_one('img')['src'])
+print(soup.select_one('img').attrs)

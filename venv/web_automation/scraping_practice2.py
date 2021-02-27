@@ -33,3 +33,4 @@ for tag in branch_infos_tags:
     branch_infos.append([branch_name, address, phone_number])
 
 print(branch_infos)
+
