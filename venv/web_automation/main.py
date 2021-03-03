@@ -9,6 +9,7 @@ TV 시청률 데이터 가져오기
 
 import requests
 from bs4 import BeautifulSoup
+from openpyxl import Workbook
 
 # response = requests.get("https://google.com")
 # print(response)  # 성공하면 200 실패하면 500
@@ -120,4 +121,23 @@ rating_page = response.text
 soup = BeautifulSoup(rating_page, 'html.parser')
 
 # print(soup.select_one('img')['src'])
-print(soup.select_one('img').attrs)
+# print(soup.select_one('img').attrs)
+
+wb = Workbook(write_only=True)
+ws = wb.create_sheet('TV Ratings')
+
+ws.append(['순위', '채널', '프로그램', '시청률'])
+
+for tr_tag in soup.select('tr')[1:]:
+    # print(tr_tag)
+    td_tags = tr_tag.select('td')
+    # print(td_tags)
+    row = [
+        td_tags[0].get_text(), # 순위
+        td_tags[1].get_text(), # 채널
+        td_tags[2].get_text(), # 프로그램
+        td_tags[3].get_text(), # 시청률
+    ]
+    ws.append(row)
+
+wb.save('시청률_2010년1월1주차.xlsx')
