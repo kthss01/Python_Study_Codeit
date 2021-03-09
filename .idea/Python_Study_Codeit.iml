@@ -7,7 +7,7 @@
     <content url="file://$MODULE_DIR$/venv/Basic" />
     <content url="file://$MODULE_DIR$/venv/Intermediate" />
     <content url="file://$MODULE_DIR$/venv/web_automation" />
-    <orderEntry type="jdk" jdkName="Python 3.8 (Strava_Pyton_WebCrawling)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (Python_Study_Codeit)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
