@@ -9,6 +9,12 @@
 
 import requests
 from bs4 import BeautifulSoup
+from openpyxl import Workbook
+
+wb = Workbook(write_only=True)
+ws = wb.create_sheet()
+
+ws.append(['지점 이름', '주소', '전화번호'])
 
 response = requests.get("https://workey.codeit.kr/orangebottle/index")
 page = response.text
@@ -16,11 +22,15 @@ page = response.text
 
 soup = BeautifulSoup(page, 'html.parser')
 
-# phone_numbers_tags = soup.select('span.phoneNum')
-phone_numbers_tags = soup.select('.phoneNum')
-phone_numbers = []
+branch_tags = soup.select('.branch')
+# print(tags)
 
-for tag in phone_numbers_tags:
-    phone_numbers.append(tag.get_text())
+for branch_tag in branch_tags:
+    city = branch_tag.select_one('.city').get_text()
+    # print(city)
+    address = branch_tag.select_one('.address').get_text()
+    phoneNum = branch_tag.select_one('.phoneNum').get_text()
 
-print(phone_numbers)
+    ws.append([city, address, phoneNum])
+
+wb.save('오렌지_보틀.xlsx')
