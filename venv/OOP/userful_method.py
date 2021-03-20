@@ -13,7 +13,7 @@ print(sum(int_list))  # => 15
 print(sum(int_tuple))  # => 16
 print(sum(int_dict))  # => 6
 
-# ternary expression
+# ternary expression 삼항 연산자
 condition = True
 
 if condition:
